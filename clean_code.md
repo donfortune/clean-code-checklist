@@ -1,3 +1,4 @@
+CLEAN CODE SAFE Checklist body { font-family: Arial, sans-serif; line-height: 1.6; margin: 20px; } h1, h2 { color: #4CAF50; } pre { background: #f4f4f4; padding: 10px; border-left: 4px solid #4CAF50; overflow-x: auto; } .bad { border-left-color: #F44336; }
 
 CLEAN CODE SAFE Checklist
 =========================
@@ -9,14 +10,14 @@ Follow a consistent code style (e.g., Prettier, ESLint)
 
 Use clear naming conventions for variables, functions, and files
 
-### Good Example:
+### ✅ Good Example:
 
 const getUserProfile = (userId) => {
     return db.findById(userId);
 };
     
 
-### Bad Example:
+### ❌ Bad Example:
 
 const getusr = (uid) => db.fnd(uid);
     
@@ -28,13 +29,13 @@ Use proper logging libraries like Winston or Pino
 
 Avoid logging sensitive data
 
-### Good Example:
+### ✅ Good Example:
 
 const logger = require('winston');
 logger.info(\`User ${userId} logged in\`);
     
 
-### Bad Example:
+### ❌ Bad Example:
 
 console.log(\`Password for ${userId}: ${password}\`);
     
@@ -44,14 +45,14 @@ E - Error Handling
 
 Implement centralized error handling middleware
 
-### Good Example:
+### ✅ Good Example:
 
 app.use((err, req, res, next) => {
     res.status(500).json({ error: err.message });
 });
     
 
-### Bad Example:
+### ❌ Bad Example:
 
 app.get('/user', (req, res) => {
     throw new Error('User not found'); // No proper handling
@@ -63,13 +64,13 @@ A - Authentication & Authorization
 
 Use JWT for secure token-based authentication
 
-### Good Example:
+### ✅ Good Example:
 
 const jwt = require('jsonwebtoken');
 const token = jwt.sign({ id: userId }, process.env.JWT\_SECRET, { expiresIn: '1h' });
     
 
-### Bad Example:
+### ❌ Bad Example:
 
 const token = Buffer.from(\`user:${userId}\`).toString('base64'); // Insecure encoding
     
@@ -79,7 +80,7 @@ N - Normalization
 
 Keep database schemas clear and concise
 
-### Good Example:
+### ✅ Good Example:
 
 const userSchema = new mongoose.Schema({
     name: String,
@@ -87,7 +88,7 @@ const userSchema = new mongoose.Schema({
 });
     
 
-### Bad Example:
+### ❌ Bad Example:
 
 const userSchema = new mongoose.Schema({
     userName: String,
@@ -100,13 +101,13 @@ C - Caching
 
 Use caching tools like Redis
 
-### Good Example:
+### ✅ Good Example:
 
 const cacheData = await redis.get('user:123');
 if (cacheData) return JSON.parse(cacheData);
     
 
-### Bad Example:
+### ❌ Bad Example:
 
 const data = await db.findById(123); // No caching
     
@@ -116,12 +117,12 @@ O - Optimization
 
 Use pagination, filtering, and indexing for performance
 
-### Good Example:
+### ✅ Good Example:
 
 const users = await db.find().limit(10).skip(20);
     
 
-### Bad Example:
+### ❌ Bad Example:
 
 const users = await db.find(); // Large data load without pagination
     
@@ -131,14 +132,14 @@ D - Data Validation
 
 Use libraries like Joi or express-validator
 
-### Good Example:
+### ✅ Good Example:
 
 const schema = Joi.object({
     email: Joi.string().email().required(),
 });
     
 
-### Bad Example:
+### ❌ Bad Example:
 
 if (!req.body.email.includes('@')) return res.status(400).send('Invalid email');
     
@@ -148,13 +149,13 @@ E - Environment Management
 
 Use .env files for sensitive information
 
-### Good Example:
+### ✅ Good Example:
 
 DB\_PASSWORD=securepassword123
 JWT\_SECRET=mystrongsecret
     
 
-### Bad Example:
+### ❌ Bad Example:
 
 const password = 'securepassword123'; // Hardcoded
     
