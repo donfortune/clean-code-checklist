@@ -1,4 +1,3 @@
-CLEAN CODE SAFE Checklist body { font-family: Arial, sans-serif; line-height: 1.6; margin: 20px; } h1, h2 { color: #4CAF50; } pre { background: #f4f4f4; padding: 10px; border-left: 4px solid #4CAF50; overflow-x: auto; } .bad { border-left-color: #F44336; }
 
 CLEAN CODE SAFE Checklist
 =========================
