@@ -1,5 +1,5 @@
 
-CLEAN CODE SAFE Checklist
+CLEAN CODE SAFE Checklists
 =========================
 
 C - Consistency
