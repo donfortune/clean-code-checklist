@@ -9,7 +9,7 @@ Follow a consistent code style (e.g., Prettier, ESLint)
 
 Use clear naming conventions for variables, functions, and files
 
-### ✅ Good Example:
+### ✅ Good Example
 
 const getUserProfile = (userId) => {
     return db.findById(userId);
